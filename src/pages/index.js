@@ -203,63 +203,27 @@ const IndexPage = ({ data }) => (
             </div>
           </div>
           <footer>
-            <div className="footerIcons">
-              {configs.facebook_username && (
-                <a
-                  href={`https://facebook.com/${configs.facebook_username}`}
-                  aria-label="Facebook"
-                >
-                  <span className="fa-stack fa-1x">
-                    <i className="socialIconBack fas fa-circle fa-stack-2x" />
-                    <i className="socialIconTop fab fa-facebook fa-stack-1x" />
-                  </span>
-                </a>
-              )}
-
-              {configs.linkedin_username && (
-                <a
-                  href={`https://www.linkedin.com/in/${configs.linkedin_username}`}
-                  aria-label="LinkedIn"
-                >
-                  <span className="fa-stack fa-1x">
-                    <i className="socialIconBack fas fa-circle fa-stack-2x" />
-                    <i className="socialIconTop fab fa-linkedin fa-stack-1x" />
-                  </span>
-                </a>
-              )}
-
-              {configs.twitter_username && (
-                <a
-                  href={`https://twitter.com/${configs.twitter_username}`}
-                  aria-label="Twitter"
-                >
-                  <span className="fa-stack fa-1x">
-                    <i className="socialIconBack fas fa-circle fa-stack-2x" />
-                    <i className="socialIconTop fab fa-twitter fa-stack-1x" />
-                  </span>
-                </a>
-              )}
-
-              {configs.github_username && (
-                <a
-                  href={`https://github.com/${configs.github_username}`}
-                  aria-label="GitHub"
-                >
-                  <span className="fa-stack fa-1x">
-                    <i className="socialIconBack fas fa-circle fa-stack-2x" />
-                    <i className="socialIconTop fab fa-github fa-stack-1x" />
-                  </span>
-                </a>
-              )}
-
-              {configs.email_address && (
-                <a href={`mailto:${configs.email_address}`} aria-label="Email">
-                  <span className="fa-stack fa-1x">
-                    <i className="socialIconBack fas fa-circle fa-stack-2x" />
-                    <i className="socialIconTop fas fa-envelope fa-stack-1x" />
-                  </span>
-                </a>
-              )}
+            <div className="contact-support">
+              <div className="support-grid">
+                <div className="support-item">
+                  <a href={configs.support_links.report_issues} className="support-header">
+                    Report Issues
+                  </a>
+                  <p>Visit our GitHub Issues page to report technical problems or bugs.</p>
+                </div>
+                <div className="support-item">
+                  <a href={configs.support_links.feature_requests} className="support-header">
+                    Feature Requests
+                  </a>
+                  <p>Have ideas for improvements? Create a new issue with the "enhancement" label.</p>
+                </div>
+                <div className="support-item">
+                  <a href={configs.support_links.general_support} className="support-header">
+                    General Support
+                  </a>
+                  <p>For general questions, open a support request. We'll respond within 24-48 hours.</p>
+                </div>
+              </div>
             </div>
           </footer>
           {/*TODO: Add App Store API */}

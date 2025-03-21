@@ -83,4 +83,10 @@ module.exports = {
   social_icons_foreground_color : "#666666",
   social_icons_background_color : "#e6e6e6",
   footer_text_color             : "#666666",
+  // Support Links
+  support_links: {
+    report_issues: "https://github.com/daily-dialogs/dialogs/issues/new?template=bug_report.md",
+    feature_requests: "https://github.com/daily-dialogs/dialogs/issues/new?template=feature_request.md&labels=enhancement",
+    general_support: "mailto:support@dialogs.app"
+  }
 }

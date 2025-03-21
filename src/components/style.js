@@ -586,42 +586,126 @@ export default createGlobalStyle`
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    padding-top: 30px;
+    padding: 50px 0;
+    background-color: ${configs.body_background_color};
   }
 
-  .footerText {
-    color: ${configs.footer_text_color};
-    display: block;
-    line-height: 1.5;
+  .contact-support {
     width: 100%;
-    text-align: center;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    max-width: ${configs.content_width};
+    padding: 0 15px;
   }
 
-  .footerIcons {
-    padding-bottom: 70px;
-    display: flex;
+  .contact-support h2 {
+    text-align: center;
+    color: ${configs.feature_title_color};
+    margin-bottom: 50px;
+    font-size: 3.2rem;
+  }
+
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .support-item {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .support-item h3 {
+    color: ${configs.feature_title_color};
+    margin-bottom: 15px;
+    font-size: 2.4rem;
+  }
+
+  .support-item p {
+    color: ${configs.feature_text_color};
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    display: inline-block;
+  }
+
+  .support-button {
+    display: inline-block;
+    color: ${configs.link_color};
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    margin-left: 5px;
+  }
+
+  .support-button:hover {
+    color: ${configs.link_color}dd;
+    border-bottom-color: ${configs.link_color}dd;
   }
 
   @media only screen and (max-width: 992px) {
-    .footerText {
-      color: ${configs.footer_text_color};
-      display: block;
-      line-height: 1.5;
-      width: 100%;
-      text-align: center;
-      padding-top: 54px;
-      padding-bottom: 61px;
+    .support-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
-    .footerIcons {
-      padding-bottom: 70px;
-      display: flex;
+    .contact-support h2 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+    }
+
+    .support-item {
+      padding: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 528px) {
+    footer {
+      padding: 50px 0;
+    }
+
+    .contact-support h2 {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+    }
+
+    .support-item {
+      padding: 20px;
+    }
+
+    .support-item h3 {
+      font-size: 2rem;
+    }
+
+    .support-item p {
+      font-size: 1.4rem;
     }
   }
 
   .hidden {
     display: none;
+  }
+
+  .support-header {
+    display: inline-block;
+    color: ${configs.feature_title_color};
+    margin-bottom: 16px;
+    font-size: 2.4rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+  }
+
+  .support-header:hover {
+    color: ${configs.link_color};
+  }
+
+  .support-item p {
+    color: ${configs.feature_text_color};
+    line-height: 1.5;
+    font-size: 1.6rem;
   }
 `
