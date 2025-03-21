@@ -190,7 +190,7 @@ export default createGlobalStyle`
     grid-area: i;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 140px;
+    padding-top: 80px;
     align-content: flex-start;
   }
 
