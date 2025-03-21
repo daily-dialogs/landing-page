@@ -5,7 +5,7 @@ module.exports = {
   presskit_download_link: "",                                  // Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file). 
   video_or_screenshot   : "screenshot",                                           // "screenshot" or "video"
   app_url               : "https://dialogs.app",                            // Domain of your website without path_prefix.
-  path_prefix           : "/",                                                    // Prefixes all links. For cases when deployed to example.github.io/automatic-gatsbyjs-app-landing-page/.
+  path_prefix           : "",                                                    // Prefixes all links. For cases when deployed to example.github.io/automatic-gatsbyjs-app-landing-page/.
   app_name              : "Daily Dialogs",
   app_price             : "Free",
   app_description       : "Learn English with real-life conversations. Going to a job interview? Renting an apartment? Visiting a doctor? Ordering food? Just choose a situation and start practicing. No boring grammar, only useful dialogs for daily life.",
