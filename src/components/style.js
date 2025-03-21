@@ -88,19 +88,20 @@ export default createGlobalStyle`
     padding-left: 15px;
     padding-right: 15px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 115px 876px auto auto;
+    grid-template-rows: 115px 876px auto auto auto;
     grid-column-gap: 30px;
     grid-template-areas:
       "h h h h h h h h h h h h"
       "p p p p p i i i i i i i"
       "c c c c c c c c c c c c"
+      "s s s s s s s s s s s s"
       "f f f f f f f f f f f f";
   }
 
   @media only screen and (max-width: 1070px) {
     .container {
       // Set up the container for the site content
-      grid-template-rows: 115px 811px auto auto;
+      grid-template-rows: 115px 811px auto auto auto;
     }
   }
 
@@ -108,12 +109,13 @@ export default createGlobalStyle`
     .container {
       grid-column-gap: 0px;
       grid-template-columns: 1;
-      grid-template-rows: 115px auto auto auto auto;
+      grid-template-rows: 115px auto auto auto auto auto;
       grid-template-areas:
         "h h h h h h h h h h h h"
         "i i i i i i i i i i i i"
         "p p p p p p p p p p p p"
         "c c c c c c c c c c c c"
+        "s s s s s s s s s s s s"
         "f f f f f f f f f f f f";
     }
   }
@@ -402,6 +404,95 @@ export default createGlobalStyle`
     flex-grow: 1;
     flex-wrap: wrap;
     margin-top: 93px;
+  }
+
+  // Screenshots Section
+  .screenshots {
+    grid-area: s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 93px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .screenshots h2 {
+    color: ${configs.feature_title_color};
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .screenshots-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    width: 100%;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .screenshots-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .screenshot-item {
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .screenshot-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .screenshot-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .screenshot-info {
+    padding: 15px;
+    background: white;
+  }
+
+  .screenshot-info h3 {
+    color: ${configs.feature_title_color};
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .screenshot-info p {
+    color: ${configs.feature_text_color};
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .screenshots {
+      margin-top: 11px;
+    }
+
+    .screenshot-item {
+      flex: 0 0 250px;
+    }
+  }
+
+  @media only screen and (max-width: 528px) {
+    .screenshot-item {
+      flex: 0 0 200px;
+    }
   }
 
   .feature {

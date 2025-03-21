@@ -11,6 +11,15 @@ module.exports = {
   app_description       : "Learn English with real-life conversations. Going to a job interview? Renting an apartment? Visiting a doctor? Ordering food? Just choose a situation and start practicing. No boring grammar, only useful dialogs for daily life.",
   app_keywords          : ["learn", "english", "dialogue", "dialogs", "conversation", "speaking", "listening", "vocabulary", "ai", "lessons"],
 
+  // Screenshots Configuration
+  screenshots: [
+    "English-01.png",
+    "English-02.png",
+    "English-03.png",
+    "English-04.png",
+    "English-05.png"
+  ],
+
   // Personal Info
   your_name              : "onsissond",
   your_link              : "https://imedadel.me",

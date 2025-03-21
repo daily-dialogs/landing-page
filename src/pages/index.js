@@ -182,15 +182,28 @@ const IndexPage = ({ data }) => (
               return null
             })}
           </div>
+          <div className="screenshots">
+            <div className="screenshots-grid">
+              {configs.screenshots.map((filename, index) => {
+                const screenshotData = data.screenshots.edges.find(
+                  edge => edge.node.relativePath === `screenshots/${filename}`
+                );
+                if (screenshotData) {
+                  return (
+                    <div key={index} className="screenshot-item">
+                      <Img
+                        fluid={screenshotData.node.childImageSharp.fluid}
+                        className="screenshot-image"
+                      />
+                    </div>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          </div>
           <footer>
             <p className="footerText">
-              Made by{" "}
-              {configs.your_link ? (
-                <a href={configs.your_link}>{configs.your_name}</a>
-              ) : (
-                `${configs.your_name}`
-              )}
-              {configs.your_city && ` in ${configs.your_city}`}
             </p>
             <div className="footerIcons">
               {configs.facebook_username && (
@@ -343,6 +356,18 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    screenshots: allFile(filter: { relativePath: { glob: "screenshots/*.{png,jpg}" } }) {
+      edges {
+        node {
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
