@@ -203,8 +203,6 @@ const IndexPage = ({ data }) => (
             </div>
           </div>
           <footer>
-            <p className="footerText">
-            </p>
             <div className="footerIcons">
               {configs.facebook_username && (
                 <a

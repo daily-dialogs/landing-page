@@ -586,6 +586,7 @@ export default createGlobalStyle`
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    padding-top: 30px;
   }
 
   .footerText {
